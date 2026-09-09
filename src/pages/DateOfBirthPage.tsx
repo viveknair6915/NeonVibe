@@ -58,13 +58,11 @@ export const DateOfBirthPage: React.FC = () => {
         width: '100%'
       }}
     >
-      {/* Top Header */}
       <header className="screen-header">
         <Logo size="md" />
         <span className="header-status-badge">GETTING READY</span>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -104,7 +102,6 @@ export const DateOfBirthPage: React.FC = () => {
             AGE
           </label>
 
-          {/* Interactive Input trigger for DatePicker Sheet */}
           <div
             id="age-display"
             onClick={() => setIsSheetOpen(true)}
@@ -162,7 +159,6 @@ export const DateOfBirthPage: React.FC = () => {
           You must be at least 18 years old to join events and connect with extroverts.
         </p>
 
-        {/* Action Buttons */}
         <div className="screen-footer">
           <Button
             onClick={handleNext}
@@ -184,7 +180,6 @@ export const DateOfBirthPage: React.FC = () => {
         </div>
       </main>
 
-      {/* Date Picker Bottom Sheet */}
       <DatePickerSheet
         isOpen={isSheetOpen}
         onClose={() => setIsSheetOpen(false)}

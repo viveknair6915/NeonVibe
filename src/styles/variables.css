@@ -1,5 +1,5 @@
 :root {
-  /* Color Palette */
+  
   --bg-primary: #000000;
   --bg-secondary: #0a0a0c;
   --bg-surface: #121215;
@@ -16,7 +16,7 @@
   --border-strong: #383840;
   --border-focus: #ffffff;
 
-  /* Neon Accents */
+  
   --neon-pink: #ff2a85;
   --neon-pink-soft: rgba(255, 42, 133, 0.15);
   --neon-pink-glow: 0 0 10px rgba(255, 42, 133, 0.7), 0 0 25px rgba(255, 42, 133, 0.4);
@@ -33,13 +33,13 @@
   --badge-silver: #d8d8e0;
   --badge-gold: #ffb800;
 
-  /* Feedback Colors */
+  
   --error: #ff453a;
   --error-bg: rgba(255, 69, 58, 0.12);
   --success: #30d158;
   --success-bg: rgba(48, 209, 88, 0.12);
 
-  /* Button Tokens */
+  
   --btn-primary-bg: #ffffff;
   --btn-primary-text: #000000;
   --btn-secondary-border: #ffffff;
@@ -47,17 +47,17 @@
   --btn-disabled-bg: #1c1c20;
   --btn-disabled-text: #52525b;
 
-  /* Sizing & Radii */
+  
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-pill: 9999px;
 
-  /* Spacing */
+  
   --header-height: 64px;
   --bottom-nav-height: 72px;
 
-  /* Typography */
+  
   --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-script: 'Sacramento', 'Caveat', cursive;
   --font-neon-display: 'Monoton', 'Audiowide', sans-serif;

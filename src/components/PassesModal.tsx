@@ -23,13 +23,10 @@ export const PassesModal: React.FC<PassesModalProps> = ({
 
   const handlePurchase = (passesCount: string, price: string) => {
     onPurchase?.();
-    showToast(`Purchased ${passesCount} VIP Passes for ${price}! Added to your club wallet 🎉`, 'success');
+    showToast(`Purchased ${passesCount} VIP Passes for ${price}! Added to your club wallet!`, 'success');
     onClose();
   };
 
-  // ==========================================
-  // DESKTOP WEBSITE VIP PASSES MODAL
-  // ==========================================
   if (viewMode === 'website') {
     return (
       <div
@@ -64,7 +61,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
             overflow: 'hidden'
           }}
         >
-          {/* Top ambient glow */}
           <div
             style={{
               position: 'absolute',
@@ -78,7 +74,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
             }}
           />
 
-          {/* Close button */}
           <button
             onClick={onClose}
             style={{
@@ -109,7 +104,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
             <X size={18} />
           </button>
 
-          {/* Modal Header */}
           <div style={{ padding: '32px 36px 20px 36px', position: 'relative', zIndex: 5 }}>
             <div
               style={{
@@ -148,7 +142,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
             </p>
           </div>
 
-          {/* 2-Column Desktop Body */}
           <div
             style={{
               display: 'grid',
@@ -159,7 +152,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
               zIndex: 5
             }}
           >
-            {/* Left Column: Member Perks */}
             <div
               style={{
                 backgroundColor: '#101018',
@@ -235,7 +227,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
               </div>
             </div>
 
-            {/* Right Column: Pass Purchase Options */}
             <div
               style={{
                 backgroundColor: '#101018',
@@ -253,7 +244,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
                 </h3>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  {/* Option 1: 6 Passes */}
                   <div
                     onClick={() => setSelectedTier('6')}
                     style={{
@@ -284,7 +274,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
                     </div>
                   </div>
 
-                  {/* Option 2: 15 Passes */}
                   <div
                     onClick={() => setSelectedTier('15')}
                     style={{
@@ -315,7 +304,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
                     </div>
                   </div>
 
-                  {/* Option 3: Season Pass */}
                   <div
                     onClick={() => setSelectedTier('season')}
                     style={{
@@ -366,9 +354,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
     );
   }
 
-  // ==========================================
-  // AUTHENTIC MOBILE VIP PASSES MODAL (1:1 WhatsApp)
-  // ==========================================
   return (
     <div
       style={{
@@ -403,7 +388,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
           overflowY: 'auto'
         }}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
@@ -426,7 +410,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
           <X size={18} />
         </button>
 
-        {/* Top Header Graphic */}
         <div style={{ textAlign: 'center', marginBottom: '16px' }}>
           <div
             style={{
@@ -452,7 +435,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
           </h2>
         </div>
 
-        {/* Black Container */}
         <div
           style={{
             backgroundColor: '#0a0a0d',
@@ -483,7 +465,6 @@ export const PassesModal: React.FC<PassesModalProps> = ({
             </div>
           </div>
 
-          {/* Pricing Box */}
           <div
             style={{
               backgroundColor: '#ffffff',

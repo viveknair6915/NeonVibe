@@ -15,11 +15,9 @@ export const OTPInput: React.FC<OTPInputProps> = ({
 }) => {
   const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
 
-  // Array of 6 digits
   const digits = Array.from({ length: 6 }, (_, i) => value[i] || '');
 
   useEffect(() => {
-    // Focus first empty input or the first one on mount
     const firstEmptyIndex = digits.findIndex((d) => !d);
     const targetIndex = firstEmptyIndex === -1 ? 0 : firstEmptyIndex;
     if (inputsRef.current[targetIndex] && !disabled) {
@@ -31,11 +29,9 @@ export const OTPInput: React.FC<OTPInputProps> = ({
     const val = e.target.value;
     if (!val) return;
 
-    // Filter only digits
     const onlyDigits = val.replace(/\D/g, '');
     if (!onlyDigits) return;
 
-    // Check if pasted multiple digits
     if (onlyDigits.length > 1) {
       handlePastedDigits(onlyDigits);
       return;
@@ -47,7 +43,6 @@ export const OTPInput: React.FC<OTPInputProps> = ({
     const combined = newDigits.join('').slice(0, 6);
     onChange(combined);
 
-    // Auto-focus next field
     if (index < 5 && inputsRef.current[index + 1]) {
       inputsRef.current[index + 1]?.focus();
     }
@@ -59,11 +54,9 @@ export const OTPInput: React.FC<OTPInputProps> = ({
       const newDigits = [...digits];
       
       if (newDigits[index]) {
-        // Clear current
         newDigits[index] = '';
         onChange(newDigits.join(''));
       } else if (index > 0) {
-        // Clear previous and focus previous
         newDigits[index - 1] = '';
         onChange(newDigits.join(''));
         inputsRef.current[index - 1]?.focus();
@@ -163,7 +156,6 @@ export const OTPInput: React.FC<OTPInputProps> = ({
                   : '#383842';
               }}
             />
-            {/* Dot indicator if filled, replicating the screenshot dot styling */}
             {isFilled && (
               <div
                 style={{
@@ -174,7 +166,7 @@ export const OTPInput: React.FC<OTPInputProps> = ({
                   position: 'absolute',
                   top: '12px',
                   pointerEvents: 'none',
-                  display: 'none' // we show actual digit for clarity, but keep dot capability if preferred
+                  display: 'none'
                 }}
               />
             )}

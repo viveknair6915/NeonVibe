@@ -5,7 +5,7 @@ import { Button } from '../components/Button';
 import { AfterPartyCard } from '../components/AfterPartyCard';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { AccountPromptSheet } from '../components/AccountPromptSheet';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Zap, Users, MessageSquare, Camera, Star, Ticket } from 'lucide-react';
 
 export const LandingPage: React.FC = () => {
   const { goToStep, formData, viewMode } = useSignupWizard();
@@ -39,13 +39,9 @@ export const LandingPage: React.FC = () => {
     }
   };
 
-  // ==========================================
-  // DESKTOP WEBSITE VIEW LAYOUT
-  // ==========================================
   if (viewMode === 'website') {
     return (
       <div className="website-before-hours-container animate-fade-in">
-        {/* Hero Section */}
         <section className="website-hero-section">
           <div
             style={{
@@ -73,7 +69,6 @@ export const LandingPage: React.FC = () => {
             </span>
           </div>
 
-          {/* Glowing Neon Sign */}
           <div
             style={{
               display: 'flex',
@@ -145,9 +140,7 @@ export const LandingPage: React.FC = () => {
           </p>
         </section>
 
-        {/* 2-Column Action Hub */}
         <section className="website-action-grid">
-          {/* Card 1: Host / Create */}
           <div
             style={{
               backgroundColor: '#0c0c12',
@@ -201,15 +194,15 @@ export const LandingPage: React.FC = () => {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e4e4e7' }}>
-                  <span style={{ color: 'var(--neon-pink)', fontWeight: 800 }}>⚡</span>
+                  <Zap size={14} color='var(--neon-pink)' />
                   <span>Instant Silver &amp; Gold member status boost</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e4e4e7' }}>
-                  <span style={{ color: 'var(--neon-pink)', fontWeight: 800 }}>👥</span>
+                  <Users size={14} color='var(--neon-pink)' />
                   <span>Verified 18+ attendee guestlist &amp; approval</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e4e4e7' }}>
-                  <span style={{ color: 'var(--neon-pink)', fontWeight: 800 }}>💬</span>
+                  <MessageSquare size={14} color='var(--neon-pink)' />
                   <span>Auto-created private party group chat</span>
                 </div>
               </div>
@@ -220,7 +213,6 @@ export const LandingPage: React.FC = () => {
             </Button>
           </div>
 
-          {/* Card 2: After Party */}
           <div
             style={{
               backgroundColor: '#0c0c12',
@@ -274,15 +266,15 @@ export const LandingPage: React.FC = () => {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e4e4e7' }}>
-                  <span style={{ color: 'var(--neon-purple)', fontWeight: 800 }}>📸</span>
+                  <Camera size={14} color='var(--neon-purple)' />
                   <span>High-resolution party photo galleries</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e4e4e7' }}>
-                  <span style={{ color: 'var(--neon-purple)', fontWeight: 800 }}>🌟</span>
+                  <Star size={14} color='var(--neon-purple)' />
                   <span>Attended party badges &amp; superlatives</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#e4e4e7' }}>
-                  <span style={{ color: 'var(--neon-purple)', fontWeight: 800 }}>🎟️</span>
+                  <Ticket size={14} color='var(--neon-purple)' />
                   <span>Exclusive VIP passes for upcoming weekends</span>
                 </div>
               </div>
@@ -317,7 +309,6 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 3-Column Community Benefits */}
         <section className="website-features-grid">
           <div
             style={{
@@ -327,7 +318,7 @@ export const LandingPage: React.FC = () => {
               padding: '24px'
             }}
           >
-            <div style={{ fontSize: '1.8rem', marginBottom: '12px' }}>🍸</div>
+            <div style={{ marginBottom: '12px' }}><Sparkles size={28} color='var(--neon-pink)' /></div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
               Curated Venues &amp; Tables
             </h3>
@@ -344,7 +335,7 @@ export const LandingPage: React.FC = () => {
               padding: '24px'
             }}
           >
-            <div style={{ fontSize: '1.8rem', marginBottom: '12px' }}>⚡</div>
+            <div style={{ marginBottom: '12px' }}><Zap size={28} color='var(--neon-yellow)' /></div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
               Strictly Extroverts
             </h3>
@@ -361,7 +352,7 @@ export const LandingPage: React.FC = () => {
               padding: '24px'
             }}
           >
-            <div style={{ fontSize: '1.8rem', marginBottom: '12px' }}>🎟️</div>
+            <div style={{ marginBottom: '12px' }}><Ticket size={28} color='var(--neon-blue)' /></div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
               VIP Pass System
             </h3>
@@ -371,7 +362,6 @@ export const LandingPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Account Prompt Bottom Sheet */}
         <AccountPromptSheet
           isOpen={showPromptSheet}
           onClose={() => setShowPromptSheet(false)}
@@ -381,9 +371,6 @@ export const LandingPage: React.FC = () => {
     );
   }
 
-  // ==========================================
-  // AUTHENTIC MOBILE VIEW (WhatsApp Reference 1:1)
-  // ==========================================
   return (
     <div
       style={{
@@ -396,13 +383,11 @@ export const LandingPage: React.FC = () => {
         position: 'relative'
       }}
     >
-      {/* Mobile-only Header */}
       <header className="screen-header">
         <Logo size="md" onClick={() => goToStep('feed')} />
         <span className="header-status-badge">BEFORE-HOURS</span>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -419,7 +404,6 @@ export const LandingPage: React.FC = () => {
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-          {/* Top category chip */}
           <div
             style={{
               display: 'inline-flex',
@@ -438,7 +422,6 @@ export const LandingPage: React.FC = () => {
             </span>
           </div>
 
-          {/* Neon Center Hero Graphic */}
           <div
             style={{
               display: 'flex',
@@ -449,7 +432,6 @@ export const LandingPage: React.FC = () => {
               userSelect: 'none'
             }}
           >
-            {/* "take it as a" */}
             <span
               style={{
                 fontFamily: 'var(--font-script)',
@@ -464,7 +446,6 @@ export const LandingPage: React.FC = () => {
               take it as a
             </span>
 
-            {/* "NEON SIGN" */}
             <div
               style={{
                 margin: '10px 0',
@@ -488,7 +469,6 @@ export const LandingPage: React.FC = () => {
               </h1>
             </div>
 
-            {/* "from the god" */}
             <span
               style={{
                 fontFamily: 'var(--font-script)',
@@ -504,7 +484,6 @@ export const LandingPage: React.FC = () => {
             </span>
           </div>
 
-          {/* Subtitle Message */}
           <p
             style={{
               fontSize: '1.05rem',
@@ -519,24 +498,20 @@ export const LandingPage: React.FC = () => {
             group chats appear here
           </p>
 
-          {/* CREATE Button */}
           <div style={{ width: '100%', maxWidth: '400px', marginBottom: '32px' }}>
             <Button onClick={handleCreate} aria-label="Create - Start Onboarding">
               CREATE
             </Button>
           </div>
 
-          {/* AFTER PARTY Card */}
           <div style={{ width: '100%', maxWidth: '400px', marginTop: 'auto' }}>
             <AfterPartyCard onClick={handleAfterPartyClick} />
           </div>
         </div>
       </main>
 
-      {/* Mobile-only Bottom Navigation */}
       <BottomNavigation activeTab="create" onTabChange={handleTabChange} />
 
-      {/* Account Prompt Bottom Sheet */}
       <AccountPromptSheet
         isOpen={showPromptSheet}
         onClose={() => setShowPromptSheet(false)}

@@ -30,7 +30,6 @@ export const OTPPage: React.FC = () => {
       setError(null);
     }
 
-    // Auto verify when 6 digits are reached
     if (newOtp.length === 6) {
       verifyCode(newOtp);
     }
@@ -45,7 +44,6 @@ export const OTPPage: React.FC = () => {
     setIsVerifying(true);
     setError(null);
 
-    // Simulate network delay
     await new Promise((resolve) => setTimeout(resolve, 650));
 
     if (codeToVerify === DEMO_OTP) {
@@ -83,12 +81,10 @@ export const OTPPage: React.FC = () => {
         width: '100%'
       }}
     >
-      {/* Top Header */}
       <header className="screen-header" style={{ justifyContent: 'center' }}>
         <Logo size="md" />
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -113,7 +109,6 @@ export const OTPPage: React.FC = () => {
           ENTER OTP
         </h1>
 
-        {/* 6-digit OTP Inputs */}
         <OTPInput
           value={otp}
           onChange={handleOtpChange}
@@ -121,7 +116,6 @@ export const OTPPage: React.FC = () => {
           disabled={isVerifying}
         />
 
-        {/* Resend Link and Cooldown */}
         <div
           style={{
             display: 'flex',
@@ -162,7 +156,6 @@ export const OTPPage: React.FC = () => {
           </div>
         )}
 
-        {/* Action Buttons */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
           <Button
             onClick={() => verifyCode(otp)}
@@ -178,7 +171,6 @@ export const OTPPage: React.FC = () => {
           </Button>
         </div>
 
-        {/* Footer info message */}
         <div
           style={{
             marginTop: 'auto',
@@ -215,7 +207,7 @@ export const OTPPage: React.FC = () => {
               justifyContent: 'space-between'
             }}
           >
-            <span>💡 Demo verification code: <strong>{DEMO_OTP}</strong></span>
+            <span>Demo verification code: <strong>{DEMO_OTP}</strong></span>
             <button
               onClick={() => handleOtpChange(DEMO_OTP)}
               style={{

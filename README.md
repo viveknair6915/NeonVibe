@@ -4,7 +4,7 @@ A responsive, mobile-first web application recreating the authentic onboarding a
 
 ---
 
-## 📸 User Flow & Screenshots
+## User Flow & Screenshots
 
 | Step | Preview | Description |
 | :---: | :--- | :--- |
@@ -19,7 +19,7 @@ A responsive, mobile-first web application recreating the authentic onboarding a
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Dual View Modes**: Switch instantly between full **Desktop Website View** (with top navigation and responsive grids) and **Mobile App Simulator** (authentic 414px mobile frame).
 - **Event Feed & RSVP**: Browse live events, filter by party type, and join with immediate state updates.
@@ -33,7 +33,7 @@ A responsive, mobile-first web application recreating the authentic onboarding a
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React 18 (Functional Components, Context API)
 - **Language**: TypeScript 5 (Strict Mode)
@@ -44,7 +44,7 @@ A responsive, mobile-first web application recreating the authentic onboarding a
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Install Dependencies
 ```bash
@@ -63,7 +63,7 @@ npm run build
 
 ---
 
-## 🧪 Demo Credentials for Testing
+## Demo Credentials for Testing
 
 | Test Case | Value / Action | Expected Result |
 | :--- | :--- | :--- |

@@ -4,7 +4,6 @@ export const validateEmail = (rawEmail: string): { isValid: boolean; error?: str
     return { isValid: false, error: 'Email is required.' };
   }
 
-  // Strict email regex matching RFC 5322 simplified standard
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
   if (!emailRegex.test(email)) {
     return { isValid: false, error: 'Please enter a valid email address.' };

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSignupWizard } from '../context/SignupContext';
 import { Logo } from '../components/Logo';
 import { Button } from '../components/Button';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Ticket } from 'lucide-react';
 
 interface IntroSplashPageProps {
   onContinue: () => void;
@@ -11,9 +11,6 @@ interface IntroSplashPageProps {
 export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) => {
   const { viewMode } = useSignupWizard();
 
-  // ==========================================
-  // DESKTOP WEBSITE INTRO HERO
-  // ==========================================
   if (viewMode === 'website') {
     return (
       <div
@@ -29,7 +26,6 @@ export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) 
           backgroundColor: '#050508'
         }}
       >
-        {/* Background ambient lighting */}
         <div
           style={{
             position: 'absolute',
@@ -135,26 +131,24 @@ export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) 
             <strong style={{ color: '#ff2a5f' }}>Warning:</strong> Entering may lead to spontaneous dancing and unsolicited high-fives!
           </p>
 
-          {/* 3 Value Pillars */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', width: '100%', margin: '36px 0' }}>
             <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid #23232e', borderRadius: '16px', padding: '16px' }}>
-              <div style={{ fontSize: '1.5rem', marginBottom: '6px' }}>🍸</div>
+              <div style={{ marginBottom: '6px' }}><Sparkles size={24} color='var(--neon-pink)' /></div>
               <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#ffffff' }}>Live Nightlife</div>
               <div style={{ fontSize: '0.75rem', color: '#8e8e93', marginTop: '4px' }}>Top parties &amp; club lounges</div>
             </div>
             <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid #23232e', borderRadius: '16px', padding: '16px' }}>
-              <div style={{ fontSize: '1.5rem', marginBottom: '6px' }}>⚡</div>
+              <div style={{ marginBottom: '6px' }}><Zap size={24} color='var(--neon-yellow)' /></div>
               <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#ffffff' }}>Before-Hours</div>
               <div style={{ fontSize: '0.75rem', color: '#8e8e93', marginTop: '4px' }}>Host private hangouts</div>
             </div>
             <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.03)', border: '1px solid #23232e', borderRadius: '16px', padding: '16px' }}>
-              <div style={{ fontSize: '1.5rem', marginBottom: '6px' }}>🎟️</div>
+              <div style={{ marginBottom: '6px' }}><Ticket size={24} color='var(--neon-blue)' /></div>
               <div style={{ fontSize: '0.9rem', fontWeight: 800, color: '#ffffff' }}>VIP Passes</div>
               <div style={{ fontSize: '0.75rem', color: '#8e8e93', marginTop: '4px' }}>Skip lines &amp; earn HVTS</div>
             </div>
           </div>
 
-          {/* Action Button */}
           <div style={{ width: '100%', maxWidth: '340px' }}>
             <Button onClick={onContinue} aria-label="Continue to Extroverts">
               <span>EXPLORE EXTROVERTS</span>
@@ -166,9 +160,6 @@ export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) 
     );
   }
 
-  // ==========================================
-  // AUTHENTIC MOBILE SPLASH VIEW (1:1 WhatsApp)
-  // ==========================================
   return (
     <div
       style={{
@@ -182,7 +173,6 @@ export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) 
         backgroundColor: '#050508'
       }}
     >
-      {/* Background ambient lighting */}
       <div
         style={{
           position: 'absolute',
@@ -199,7 +189,6 @@ export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) 
         }}
       />
 
-      {/* Centered Showcase Card */}
       <div
         className="animate-slide-up"
         style={{
@@ -269,7 +258,6 @@ export const IntroSplashPage: React.FC<IntroSplashPageProps> = ({ onContinue }) 
           </p>
         </div>
 
-        {/* Action Button */}
         <div style={{ width: '100%', marginTop: '32px' }}>
           <Button onClick={onContinue} aria-label="Continue to Extroverts">
             CONTINUE

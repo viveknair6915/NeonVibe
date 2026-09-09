@@ -14,7 +14,6 @@ export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ onOpenPasses }) =>
 
   return (
     <header className="desktop-navbar">
-      {/* Brand & Title */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '28px' }}>
         <div
           onClick={() => goToStep('feed')}
@@ -26,7 +25,6 @@ export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ onOpenPasses }) =>
           </span>
         </div>
 
-        {/* Nav links */}
         <nav className="desktop-nav-links" aria-label="Desktop navigation">
           <button
             className={`desktop-nav-link ${currentStep === 'feed' ? 'active' : ''}`}
@@ -57,9 +55,7 @@ export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ onOpenPasses }) =>
         </nav>
       </div>
 
-      {/* Right controls */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        {/* View Mode Switcher Toggle */}
         <div
           style={{
             display: 'flex',
@@ -115,7 +111,6 @@ export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ onOpenPasses }) =>
           </button>
         </div>
 
-        {/* Club status pill */}
         <div
           className="desktop-status-pill"
           style={{
@@ -134,7 +129,6 @@ export const DesktopNavbar: React.FC<DesktopNavbarProps> = ({ onOpenPasses }) =>
           <span>Silver Member</span>
         </div>
 
-        {/* User profile / Signup CTA */}
         {isRegistered ? (
           <button
             onClick={() => goToStep('profile')}

@@ -98,7 +98,6 @@ export const DatePickerSheet: React.FC<DatePickerSheetProps> = ({
     <BottomSheet isOpen={isOpen} onClose={onClose} title="DATE OF BIRTH">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div style={{ display: 'flex', gap: '12px', width: '100%' }}>
-          {/* Day */}
           <div style={{ flex: 1 }}>
             <label
               htmlFor="dob-day"
@@ -139,7 +138,6 @@ export const DatePickerSheet: React.FC<DatePickerSheetProps> = ({
             />
           </div>
 
-          {/* Month */}
           <div style={{ flex: 1 }}>
             <label
               htmlFor="dob-month"
@@ -180,7 +178,6 @@ export const DatePickerSheet: React.FC<DatePickerSheetProps> = ({
             />
           </div>
 
-          {/* Year */}
           <div style={{ flex: 1.5 }}>
             <label
               htmlFor="dob-year"

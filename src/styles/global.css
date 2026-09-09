@@ -29,7 +29,7 @@ html, body {
   background-color: #050508;
 }
 
-/* Ambient glow background wrapper */
+
 .desktop-backdrop {
   position: fixed;
   inset: 0;
@@ -41,9 +41,7 @@ html, body {
     radial-gradient(circle at 50% 30%, rgba(0, 210, 255, 0.03) 0%, transparent 60%);
 }
 
-/* ==========================================================================
-   DESKTOP WEBSITE TOP NAVBAR (ONLY in Website Mode)
-   ========================================================================== */
+
 .desktop-nav-container {
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -107,7 +105,7 @@ html, body {
   border-radius: 2px;
 }
 
-/* Responsive Desktop Navbar */
+
 @media (max-width: 1024px) {
   .desktop-navbar {
     padding: 12px 20px;
@@ -163,10 +161,7 @@ html, body {
   }
 }
 
-/* ==========================================================================
-   MODE 1: WEBSITE / DESKTOP VIEW (.mode-website)
-   Full-width modern social & nightlife event web application
-   ========================================================================== */
+
 .mode-website {
   width: 100%;
   min-height: 100vh;
@@ -187,7 +182,7 @@ html, body {
   border: none;
 }
 
-/* On Website mode, hide inner mobile headers and bottom navbars */
+
 .mode-website .screen-header {
   display: none !important;
 }
@@ -196,7 +191,7 @@ html, body {
   display: none !important;
 }
 
-/* Ensure child page root divs don't force 100vh black background in website mode */
+
 .mode-website .app-container > div {
   min-height: auto !important;
   background-color: transparent !important;
@@ -208,7 +203,7 @@ html, body {
   max-width: 100% !important;
 }
 
-/* Website events grid: 3 columns on desktop, 2 on laptop/tablet */
+
 .mode-website .events-grid {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
@@ -228,7 +223,7 @@ html, body {
   }
 }
 
-/* Website Before-Hours layout */
+
 .mode-website .website-before-hours-container {
   width: 100%;
   display: flex;
@@ -268,7 +263,7 @@ html, body {
   }
 }
 
-/* Website Wizard Onboarding Card */
+
 .mode-website .wizard-card-wrapper {
   max-width: 600px;
   width: 100%;
@@ -289,7 +284,7 @@ html, body {
 }
 
 .mode-website .wizard-card-wrapper .screen-header {
-  display: flex !important; /* Show clean header inside the onboarding modal */
+  display: flex !important; 
   border-bottom: 1px solid #1c1c24;
   background-color: #111116;
   padding: 18px 28px;
@@ -299,7 +294,7 @@ html, body {
   padding: 32px 36px 40px 36px !important;
 }
 
-/* Website Profile Layout */
+
 .mode-website .website-profile-container {
   width: 100%;
   max-width: 1100px;
@@ -319,10 +314,7 @@ html, body {
   }
 }
 
-/* ==========================================================================
-   MODE 2: MOBILE VIEW (.mode-mobile)
-   Authentic 1:1 mobile phone simulator matching WhatsApp screenshots
-   ========================================================================== */
+
 .mode-mobile {
   width: 100%;
   min-height: 100vh;
@@ -334,12 +326,12 @@ html, body {
   background-color: #050508;
 }
 
-/* NO desktop navbar outside when in mobile view! */
+
 .mode-mobile .desktop-nav-container {
   display: none !important;
 }
 
-/* Simulator Switcher Bar above mobile frame on desktop */
+
 .mobile-simulator-bar {
   display: flex;
   justify-content: center;
@@ -370,7 +362,7 @@ html, body {
   box-shadow: 0 0 20px rgba(255, 42, 133, 0.4);
 }
 
-/* Authentic phone simulator container */
+
 .mode-mobile .app-container {
   width: 100%;
   max-width: 412px;
@@ -390,7 +382,7 @@ html, body {
   padding: 0 !important;
 }
 
-/* Fixed 3px step progress bar */
+
 .signup-progress-bar {
   height: 3px !important;
   max-height: 3px !important;
@@ -403,7 +395,7 @@ html, body {
   overflow: hidden !important;
 }
 
-/* Ensure inner pages fill 100% of simulator and flex-scroll */
+
 .mode-mobile .app-page-wrapper {
   flex: 1 1 0% !important;
   min-height: 0 !important;
@@ -468,7 +460,7 @@ html, body {
   gap: 20px !important;
 }
 
-/* Hide desktop-only elements inside mobile view */
+
 .mode-mobile .desktop-feed-header,
 .mode-mobile .desktop-feed-action {
   display: none !important;
@@ -487,9 +479,7 @@ html, body {
   overflow: hidden !important;
 }
 
-/* ==========================================================================
-   NATIVE MOBILE DEVICES (Screen width <= 768px)
-   ========================================================================== */
+
 @media (max-width: 768px) {
   .desktop-nav-container,
   .mobile-simulator-bar {
@@ -573,9 +563,7 @@ html, body {
   }
 }
 
-/* ==========================================================================
-   COMMON ATOMIC COMPONENTS
-   ========================================================================== */
+
 .screen-header {
   display: flex;
   align-items: center;
@@ -612,7 +600,7 @@ html, body {
   width: 100%;
 }
 
-/* Input */
+
 .custom-input {
   width: 100%;
   height: 54px;
@@ -646,7 +634,7 @@ html, body {
   animation: fadeIn 0.2s ease-out;
 }
 
-/* Buttons */
+
 .btn-primary {
   width: 100%;
   height: 52px;
@@ -710,7 +698,7 @@ html, body {
   transform: scale(0.985);
 }
 
-/* Custom Scrollbars */
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

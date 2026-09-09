@@ -56,7 +56,6 @@ const STEP_ORDER: WizardStep[] = [
 const SignupContext = createContext<SignupContextType | undefined>(undefined);
 
 export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Default step: Splash screen as requested by user
   const [currentStep, setCurrentStep] = useState<WizardStep>(() => {
     try {
       const saved = sessionStorage.getItem(STORAGE_KEY);
@@ -67,7 +66,6 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }
       }
     } catch {
-      // ignore
     }
     return 'splash';
   });
@@ -88,7 +86,6 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         }
       }
     } catch {
-      // ignore
     }
     return INITIAL_FORM_DATA;
   });
@@ -96,7 +93,6 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  // Sync to sessionStorage
   useEffect(() => {
     try {
       sessionStorage.setItem(
@@ -107,7 +103,6 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
         })
       );
     } catch {
-      // ignore
     }
   }, [currentStep, formData]);
 
@@ -124,7 +119,6 @@ export const SignupProvider: React.FC<{ children: ReactNode }> = ({ children }) 
   };
 
   const goNext = () => {
-    // Flow logic for wizard steps
     if (currentStep === 'splash') {
       goToStep('feed');
       return;

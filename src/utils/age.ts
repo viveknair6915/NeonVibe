@@ -44,7 +44,6 @@ export const validateDOB = (
     };
   }
 
-  // Month check 1-12
   if (month < 1 || month > 12) {
     return {
       isValid: false,
@@ -53,7 +52,6 @@ export const validateDOB = (
     };
   }
 
-  // Day check 1-31
   if (day < 1 || day > 31) {
     return {
       isValid: false,
@@ -62,7 +60,6 @@ export const validateDOB = (
     };
   }
 
-  // Year check reasonable human span
   const currentYear = new Date().getFullYear();
   if (year < 1900 || year > currentYear) {
     return {
@@ -72,7 +69,6 @@ export const validateDOB = (
     };
   }
 
-  // Exact calendar validity check (e.g. Feb 29, April 31)
   const testDate = new Date(year, month - 1, day);
   if (
     testDate.getFullYear() !== year ||

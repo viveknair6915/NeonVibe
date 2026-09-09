@@ -21,7 +21,6 @@ export const SuccessPage: React.FC = () => {
         overflow: 'hidden'
       }}
     >
-      {/* Background ambient lighting */}
       <div
         style={{
           position: 'absolute',
@@ -36,7 +35,6 @@ export const SuccessPage: React.FC = () => {
         }}
       />
 
-      {/* Header */}
       <header className="screen-header">
         <Logo size="md" />
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--neon-pink)' }}>
@@ -44,7 +42,6 @@ export const SuccessPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -124,7 +121,6 @@ export const SuccessPage: React.FC = () => {
           Your profile is ready. Time to find your people and make some plans.
         </p>
 
-        {/* Profile Card Summary */}
         <div
           style={{
             width: '100%',
@@ -158,7 +154,6 @@ export const SuccessPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Action Button */}
         <div style={{ width: '100%', marginTop: 'auto' }}>
           <Button onClick={() => goToStep('profile')}>
             LET&apos;S PARTY

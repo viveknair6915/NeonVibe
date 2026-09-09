@@ -24,13 +24,9 @@ export const ProfileDashboardPage: React.FC = () => {
     else if (tab === 'profile') goToStep('profile');
   };
 
-  // ==========================================
-  // DESKTOP WEBSITE PROFILE DASHBOARD
-  // ==========================================
   if (viewMode === 'website') {
     return (
       <div className="website-profile-container animate-fade-in">
-        {/* Desktop Profile Hero Banner */}
         <div
           style={{
             borderRadius: '24px',
@@ -40,7 +36,6 @@ export const ProfileDashboardPage: React.FC = () => {
             boxShadow: '0 20px 60px rgba(0,0,0,0.7)'
           }}
         >
-          {/* Cover gradient */}
           <div
             style={{
               height: '180px',
@@ -49,10 +44,8 @@ export const ProfileDashboardPage: React.FC = () => {
             }}
           />
 
-          {/* Profile Header Info */}
           <div style={{ padding: '0 36px 28px 36px', marginTop: '-60px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
             <div style={{ display: 'flex', alignItems: 'flex-end', gap: '24px' }}>
-              {/* Giant letter avatar */}
               <div
                 style={{
                   width: '120px',
@@ -86,7 +79,6 @@ export const ProfileDashboardPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Header action buttons */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               <button
                 onClick={() => setIsPassesModalOpen(true)}
@@ -147,11 +139,8 @@ export const ProfileDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* 2-Column Desktop Profile Grid */}
         <div className="website-profile-grid">
-          {/* Left Column: Membership & Superlatives */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {/* Club Status Card */}
             <div
               style={{
                 backgroundColor: '#0d0d12',
@@ -168,7 +157,6 @@ export const ProfileDashboardPage: React.FC = () => {
                 <Award size={22} color="var(--badge-silver)" />
               </div>
 
-              {/* Progress bar */}
               <div style={{ width: '100%', height: '8px', backgroundColor: '#1c1c24', borderRadius: '4px', overflow: 'hidden', marginBottom: '8px' }}>
                 <div style={{ width: '70%', height: '100%', background: 'linear-gradient(90deg, var(--neon-yellow), #ffaa00)', borderRadius: '4px' }} />
               </div>
@@ -178,7 +166,6 @@ export const ProfileDashboardPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Superlatives Card */}
             <div
               style={{
                 backgroundColor: '#0d0d12',
@@ -207,7 +194,6 @@ export const ProfileDashboardPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Attended Events & Memories Gallery */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div
               style={{
@@ -274,9 +260,6 @@ export const ProfileDashboardPage: React.FC = () => {
     );
   }
 
-  // ==========================================
-  // AUTHENTIC MOBILE PROFILE VIEW (1:1)
-  // ==========================================
   return (
     <div
       style={{
@@ -289,7 +272,6 @@ export const ProfileDashboardPage: React.FC = () => {
         overflow: 'hidden'
       }}
     >
-      {/* Scrollable Mobile Profile Content */}
       <main
         className="screen-content"
         style={{
@@ -300,7 +282,6 @@ export const ProfileDashboardPage: React.FC = () => {
           flexDirection: 'column'
         }}
       >
-        {/* Top Banner with Giant Letter Initial */}
       <div
         style={{
           width: '100%',
@@ -327,7 +308,6 @@ export const ProfileDashboardPage: React.FC = () => {
         </span>
       </div>
 
-      {/* User Info Header */}
       <div style={{ padding: '0 20px', marginTop: '-10px', zIndex: 10 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div>
@@ -372,7 +352,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Club Membership Card */}
         <div style={{ marginTop: '24px' }}>
           <div
             style={{
@@ -442,7 +421,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Stats Row */}
         <div
           style={{
             display: 'flex',
@@ -474,7 +452,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Superlatives Section */}
         <div style={{ marginTop: '28px' }}>
           <h2
             style={{
@@ -543,7 +520,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Memories Section */}
         <div style={{ marginTop: '32px' }}>
           <h2
             style={{
@@ -604,7 +580,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Passes Section */}
         <div style={{ marginTop: '32px' }}>
           <h2
             style={{
@@ -621,7 +596,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {/* VIP Passes */}
             <div
               style={{
                 border: '1.5px dashed #ff9500',
@@ -672,7 +646,6 @@ export const ProfileDashboardPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Invite Passes */}
             <div
               style={{
                 border: '1.5px dashed #007aff',
@@ -714,7 +687,6 @@ export const ProfileDashboardPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Spotlight for Business */}
         <div style={{ marginTop: '32px' }}>
           <div
             style={{
@@ -760,10 +732,8 @@ export const ProfileDashboardPage: React.FC = () => {
       </div>
     </main>
 
-    {/* Fixed Bottom Navigation */}
     <BottomNavigation activeTab={activeTab} onTabChange={handleTabChange} />
 
-      {/* Passes Modal */}
       <PassesModal
         isOpen={isPassesModalOpen}
         onClose={() => setIsPassesModalOpen(false)}

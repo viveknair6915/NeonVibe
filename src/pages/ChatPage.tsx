@@ -24,13 +24,13 @@ export const ChatPage: React.FC = () => {
   const [inputMessage, setInputMessage] = useState<string>('');
   const [messages, setMessages] = useState<Record<string, ChatMessage[]>>({
     'chat-1': [
-      { id: '1', sender: 'other', text: 'Hey Vivek! Welcome to The Royal Fitness Club event group 🎉', time: '2:30 PM', senderName: 'Rahul (Host)' },
+      { id: '1', sender: 'other', text: 'Hey Vivek! Welcome to The Royal Fitness Club event group!', time: '2:30 PM', senderName: 'Rahul (Host)' },
       { id: '2', sender: 'other', text: 'We reserved the rooftop deck at K2 Resto Lounge. Drinks start at 8:00 PM!', time: '2:32 PM', senderName: 'Rahul (Host)' },
       { id: '3', sender: 'user', text: 'Awesome! Looking forward to meeting everyone tonight.', time: '2:35 PM' }
     ],
     'chat-2': [
       { id: '1', sender: 'other', text: 'Hey everyone, the afterparty kicks off right after the lounge closes!', time: '1:15 PM', senderName: 'Elena' },
-      { id: '2', sender: 'other', text: 'Anyone needing VIP guest passes let me know now 🎟️', time: '1:20 PM', senderName: 'Elena' }
+      { id: '2', sender: 'other', text: 'Anyone needing VIP guest passes let me know now.', time: '1:20 PM', senderName: 'Elena' }
     ],
     'chat-3': [
       { id: '1', sender: 'other', text: 'Welcome to Extroverts VIP! You have 3 complimentary guest passes active on your account.', time: 'Yesterday', senderName: 'VIP Concierge' }
@@ -39,7 +39,6 @@ export const ChatPage: React.FC = () => {
 
   const handleSelectChat = (chatId: string) => {
     setActiveChatId(chatId);
-    // Clear unread badge immediately when opened
     setUnreadCounts((prev) => ({
       ...prev,
       [chatId]: 0
@@ -74,7 +73,7 @@ export const ChatPage: React.FC = () => {
       name: 'The Royal Fitness Club',
       lastMsg: 'Awesome! Looking forward to meeting everyone...',
       time: '2:35 PM',
-      avatar: '🏋️',
+      avatar: 'RFC',
       badge: 'Event Chat',
       online: true
     },
@@ -83,7 +82,7 @@ export const ChatPage: React.FC = () => {
       name: 'Extroverts Lounge Afterparty',
       lastMsg: 'Elena: Anyone needing VIP guest passes...',
       time: '1:20 PM',
-      avatar: '🍸',
+      avatar: 'K2',
       badge: 'Group',
       online: true
     },
@@ -102,9 +101,6 @@ export const ChatPage: React.FC = () => {
   const currentMessages = messages[activeChatId] || [];
   const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
 
-  // ==========================================
-  // DESKTOP WEBSITE MESSENGER LAYOUT
-  // ==========================================
   if (viewMode === 'website') {
     return (
       <div
@@ -120,7 +116,6 @@ export const ChatPage: React.FC = () => {
           boxShadow: '0 20px 60px rgba(0,0,0,0.8)'
         }}
       >
-        {/* Left Sidebar: Conversations list */}
         <aside
           style={{
             width: '340px',
@@ -130,7 +125,6 @@ export const ChatPage: React.FC = () => {
             backgroundColor: '#09090d'
           }}
         >
-          {/* Header & Search */}
           <div style={{ padding: '20px', borderBottom: '1px solid #1c1c24' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
               <h2 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#ffffff', margin: 0 }}>Messages &amp; Chats</h2>
@@ -166,7 +160,6 @@ export const ChatPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Conversation items */}
           <div style={{ flex: 1, overflowY: 'auto' }}>
             {conversations.map((conv) => {
               const unread = unreadCounts[conv.id] || 0;
@@ -219,9 +212,7 @@ export const ChatPage: React.FC = () => {
           </div>
         </aside>
 
-        {/* Right Pane: Active Message Thread */}
         <main style={{ flex: 1, display: 'flex', flexDirection: 'column', backgroundColor: '#0c0c11' }}>
-          {/* Thread Header */}
           <div style={{ padding: '16px 24px', borderBottom: '1px solid #1f1f28', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#0e0e14' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
               <div style={{ width: '42px', height: '42px', borderRadius: '12px', backgroundColor: '#181820', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem' }}>
@@ -251,7 +242,6 @@ export const ChatPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Messages Feed */}
           <div style={{ flex: 1, padding: '24px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {currentMessages.map((msg) => (
               <div
@@ -290,7 +280,6 @@ export const ChatPage: React.FC = () => {
             ))}
           </div>
 
-          {/* Message Input Box */}
           <div style={{ padding: '16px 20px', borderTop: '1px solid #1f1f28', backgroundColor: '#09090d', display: 'flex', alignItems: 'center', gap: '12px' }}>
             <input
               type="text"
@@ -335,10 +324,6 @@ export const ChatPage: React.FC = () => {
     );
   }
 
-  // ==========================================
-  // AUTHENTIC MOBILE VIEW
-  // ==========================================
-  // Sub-view B: Mobile Active Conversation Thread
   if (isMobileThreadOpen) {
     return (
       <div
@@ -351,7 +336,6 @@ export const ChatPage: React.FC = () => {
           overflow: 'hidden'
         }}
       >
-        {/* Mobile Chat Thread Header */}
         <header
           className="screen-header"
           style={{
@@ -414,7 +398,6 @@ export const ChatPage: React.FC = () => {
           </button>
         </header>
 
-        {/* Mobile Messages Scrollable Stream */}
         <main
           className="screen-content"
           style={{
@@ -463,7 +446,6 @@ export const ChatPage: React.FC = () => {
           ))}
         </main>
 
-        {/* Mobile Bottom Message Input */}
         <footer
           style={{
             padding: '12px 14px',
@@ -516,7 +498,6 @@ export const ChatPage: React.FC = () => {
     );
   }
 
-  // Sub-view A: Mobile Conversations List
   return (
     <div
       style={{

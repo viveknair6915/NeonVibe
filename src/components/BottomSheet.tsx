@@ -42,7 +42,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
       aria-modal="true"
       aria-labelledby="bottom-sheet-title"
     >
-      {/* Backdrop */}
       <div
         onClick={onClose}
         style={{
@@ -54,7 +53,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
         }}
       />
 
-      {/* Sheet Content Container */}
       <div
         className="animate-slide-up"
         style={{
@@ -73,7 +71,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
           flexDirection: 'column'
         }}
       >
-        {/* Top Drag Pill */}
         <div
           style={{
             display: 'flex',
@@ -92,7 +89,6 @@ export const BottomSheet: React.FC<BottomSheetProps> = ({
           />
         </div>
 
-        {/* Title and Close Button */}
         <div
           style={{
             display: 'flex',

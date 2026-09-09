@@ -68,21 +68,18 @@ const WizardRouter: React.FC = () => {
   const isInsideWizard = wizardSteps.includes(currentStep);
   const currentWizardStepIndex = wizardSteps.indexOf(currentStep) + 1;
 
-  // Render desktop navbar ONLY in website view mode and not on splash
   const showDesktopNavbar = viewMode === 'website' && currentStep !== 'splash';
 
   return (
     <div className={viewMode === 'website' ? 'mode-website' : 'mode-mobile'}>
       <div className="desktop-backdrop" />
 
-      {/* Top Desktop Website Navbar: ONLY when in Website mode */}
       {showDesktopNavbar && (
         <div className="desktop-nav-container">
           <DesktopNavbar onOpenPasses={() => setIsPassesModalOpen(true)} />
         </div>
       )}
 
-      {/* When in mobile mode on desktop, show clean simulator switch bar */}
       {viewMode === 'mobile' && (
         <div className="mobile-simulator-bar">
           <button
@@ -96,9 +93,7 @@ const WizardRouter: React.FC = () => {
         </div>
       )}
 
-      {/* Main Content Viewport */}
       <div className="app-container">
-        {/* Subtle step progress indicator during signup wizard steps */}
         {isInsideWizard && (
           <div
             className="signup-progress-bar"
@@ -120,7 +115,6 @@ const WizardRouter: React.FC = () => {
           </div>
         )}
 
-        {/* In website mode, wrap the wizard inside a centered onboarding modal card */}
         <div className="app-page-wrapper">
           {viewMode === 'website' && isInsideWizard ? (
             <div className="wizard-card-wrapper animate-fade-in">
@@ -134,7 +128,6 @@ const WizardRouter: React.FC = () => {
         <ToastContainer />
       </div>
 
-      {/* Passes Modal */}
       <PassesModal
         isOpen={isPassesModalOpen}
         onClose={() => setIsPassesModalOpen(false)}

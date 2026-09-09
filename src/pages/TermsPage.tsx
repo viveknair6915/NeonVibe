@@ -22,7 +22,6 @@ export const TermsPage: React.FC = () => {
         width: '100%'
       }}
     >
-      {/* Top Header */}
       <header className="screen-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <button
@@ -46,7 +45,6 @@ export const TermsPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -95,7 +93,6 @@ export const TermsPage: React.FC = () => {
           </p>
         </div>
 
-        {/* Footer */}
         <div className="screen-footer" style={{ marginTop: 'auto', paddingTop: '40px' }}>
           <p
             style={{

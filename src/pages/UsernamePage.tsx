@@ -70,13 +70,11 @@ export const UsernamePage: React.FC = () => {
         width: '100%'
       }}
     >
-      {/* Top Header */}
       <header className="screen-header">
         <Logo size="md" />
         <span className="header-status-badge">GETTING READY</span>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -156,7 +154,6 @@ export const UsernamePage: React.FC = () => {
             All your Superlatives and Invites will come your way with this name, so make it unforgettable!
           </p>
 
-          {/* Action Buttons */}
           <div className="screen-footer">
             <Button
               type="submit"

@@ -43,7 +43,6 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '', onClick
         xmlns="http://www.w3.org/2000/svg"
         style={{ display: 'block' }}
       >
-        {/* Bold Serif E */}
         <text
           x="2"
           y="30"
@@ -55,7 +54,6 @@ export const Logo: React.FC<LogoProps> = ({ size = 'md', className = '', onClick
         >
           E
         </text>
-        {/* Solid Circular Dot at top-right corner of E */}
         <circle cx="34" cy="9" r="4.2" fill="#ffffff" />
       </svg>
     </div>

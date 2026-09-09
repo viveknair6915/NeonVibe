@@ -115,7 +115,6 @@ export const PronounSelectorSheet: React.FC<PronounSelectorSheetProps> = ({
                   }
                 }}
               >
-                {/* Checkbox indicator matching screenshot */}
                 <div
                   style={{
                     width: '24px',

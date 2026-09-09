@@ -58,7 +58,6 @@ export const AfterPartyCard: React.FC<AfterPartyCardProps> = ({ onClick }) => {
           </span>
         </div>
 
-        {/* Circular arrow button */}
         <div
           style={{
             width: '38px',

@@ -21,7 +21,7 @@ export const FeedEventsPage: React.FC = () => {
       const isAlreadyJoined = joinedEvents[eventId];
       setJoinedEvents((prev) => ({ ...prev, [eventId]: !isAlreadyJoined }));
       if (!isAlreadyJoined) {
-        showToast(`Joined ${eventTitle}! See you there 🎉`, 'success');
+        showToast(`Joined ${eventTitle}! See you there!`, 'success');
       } else {
         showToast(`Left ${eventTitle}`, 'info');
       }
@@ -53,7 +53,6 @@ export const FeedEventsPage: React.FC = () => {
         color: '#ffffff'
       }}
     >
-      {/* Mobile-only Header (Hidden in Website mode via CSS) */}
       <header className="screen-header">
         <Logo size="md" />
 
@@ -93,7 +92,6 @@ export const FeedEventsPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Feed Content */}
       <main
         className="screen-content"
         style={{
@@ -107,7 +105,6 @@ export const FeedEventsPage: React.FC = () => {
           gap: '24px'
         }}
       >
-        {/* Desktop Header Banner */}
         <div
           className="desktop-feed-header"
           style={{
@@ -128,7 +125,6 @@ export const FeedEventsPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Club Status Pill */}
           <div
             style={{
               backgroundColor: '#111116',
@@ -155,7 +151,6 @@ export const FeedEventsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Action Banner to Host / Create */}
         <div
           className="desktop-feed-action"
           onClick={() => goToStep('landing')}
@@ -184,7 +179,6 @@ export const FeedEventsPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Filter Categories Bar */}
         <div
           style={{
             display: 'flex',
@@ -219,9 +213,7 @@ export const FeedEventsPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Events Grid (3 cols on website, 1 col on mobile) */}
         <div className="events-grid">
-          {/* Event Card 1: The Royal Fitness Club (WhatsApp Image 2026-09-08 at 2.59.19 PM (1).jpeg) */}
           <div
             style={{
               backgroundColor: '#0d0d10',
@@ -233,7 +225,6 @@ export const FeedEventsPage: React.FC = () => {
               transition: 'transform 0.2s ease, box-shadow 0.2s ease'
             }}
           >
-            {/* Banner Artwork */}
             <div
               style={{
                 height: '160px',
@@ -263,7 +254,6 @@ export const FeedEventsPage: React.FC = () => {
               </span>
             </div>
 
-            {/* Card Content */}
             <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
@@ -316,7 +306,6 @@ export const FeedEventsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Date & Time Container */}
               <div
                 style={{
                   backgroundColor: '#141418',
@@ -369,12 +358,11 @@ export const FeedEventsPage: React.FC = () => {
                   transition: 'all 0.2s ease'
                 }}
               >
-                {joinedEvents['event-1'] ? 'JOINED ✓' : 'JOIN'}
+                {joinedEvents['event-1'] ? 'JOINED' : 'JOIN'}
               </button>
             </div>
           </div>
 
-          {/* Event Card 2: Extroverts Lounge (WhatsApp Image 2026-09-08 at 2.59.19 PM (2).jpeg) */}
           <div
             style={{
               backgroundColor: '#0d0d10',
@@ -386,7 +374,6 @@ export const FeedEventsPage: React.FC = () => {
               transition: 'transform 0.2s ease, box-shadow 0.2s ease'
             }}
           >
-            {/* Banner Artwork */}
             <div
               style={{
                 height: '160px',
@@ -415,7 +402,6 @@ export const FeedEventsPage: React.FC = () => {
               </span>
             </div>
 
-            {/* Card Content */}
             <div style={{ padding: '18px', display: 'flex', flexDirection: 'column', flex: 1 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
@@ -482,7 +468,6 @@ export const FeedEventsPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Date & Time Container */}
               <div
                 style={{
                   backgroundColor: '#141418',
@@ -535,12 +520,11 @@ export const FeedEventsPage: React.FC = () => {
                   transition: 'all 0.2s ease'
                 }}
               >
-                {joinedEvents['event-2'] ? 'JOINED ✓' : 'JOIN'}
+                {joinedEvents['event-2'] ? 'JOINED' : 'JOIN'}
               </button>
             </div>
           </div>
 
-          {/* Event Card 3: Neon Skyline Rooftop Party */}
           <div
             style={{
               backgroundColor: '#0d0d10',
@@ -698,12 +682,11 @@ export const FeedEventsPage: React.FC = () => {
                   transition: 'all 0.2s ease'
                 }}
               >
-                {joinedEvents['event-3'] ? 'JOINED ✓' : 'JOIN'}
+                {joinedEvents['event-3'] ? 'JOINED' : 'JOIN'}
               </button>
             </div>
           </div>
 
-          {/* Event Card 4: Velvet Underground Speakeasy */}
           <div
             style={{
               backgroundColor: '#0d0d10',
@@ -847,24 +830,21 @@ export const FeedEventsPage: React.FC = () => {
                   transition: 'all 0.2s ease'
                 }}
               >
-                {joinedEvents['event-4'] ? 'JOINED ✓' : 'JOIN'}
+                {joinedEvents['event-4'] ? 'JOINED' : 'JOIN'}
               </button>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Mobile-only Bottom Navigation */}
       <BottomNavigation activeTab="home" onTabChange={handleTabChange} />
 
-      {/* Account Prompt Bottom Sheet */}
       <AccountPromptSheet
         isOpen={showPromptSheet}
         onClose={() => setShowPromptSheet(false)}
         onGetStarted={() => goToStep('terms')}
       />
 
-      {/* Passes VIP Modal */}
       <PassesModal
         isOpen={showPassesModal}
         onClose={() => setShowPassesModal(false)}

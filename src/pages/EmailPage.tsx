@@ -52,7 +52,6 @@ export const EmailPage: React.FC = () => {
 
     setIsLoading(true);
 
-    // Simulate sending OTP via API
     await new Promise((resolve) => setTimeout(resolve, 600));
 
     updateFormData({
@@ -76,7 +75,6 @@ export const EmailPage: React.FC = () => {
         width: '100%'
       }}
     >
-      {/* Top Header */}
       <header className="screen-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <button
@@ -100,7 +98,6 @@ export const EmailPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -124,7 +121,6 @@ export const EmailPage: React.FC = () => {
         </h1>
 
         <form onSubmit={handleProceed} noValidate style={{ display: 'flex', flexDirection: 'column' }}>
-          {/* Email Input */}
           <div style={{ width: '100%', marginBottom: '24px' }}>
             <input
               type="email"
@@ -153,7 +149,6 @@ export const EmailPage: React.FC = () => {
             )}
           </div>
 
-          {/* PROCEED Button */}
           <Button
             type="submit"
             isLoading={isLoading}
@@ -163,7 +158,6 @@ export const EmailPage: React.FC = () => {
             PROCEED
           </Button>
 
-          {/* Newsletter Checkbox */}
           <div
             onClick={() => setNewsletter(!newsletter)}
             style={{

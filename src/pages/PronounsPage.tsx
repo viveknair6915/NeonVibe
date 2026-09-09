@@ -29,7 +29,6 @@ export const PronounsPage: React.FC = () => {
     }
 
     setIsLoading(true);
-    // Simulate final profile generation
     await new Promise((resolve) => setTimeout(resolve, 800));
     setIsLoading(false);
 
@@ -50,13 +49,11 @@ export const PronounsPage: React.FC = () => {
         width: '100%'
       }}
     >
-      {/* Top Header */}
       <header className="screen-header">
         <Logo size="md" />
         <span className="header-status-badge">GETTING READY</span>
       </header>
 
-      {/* Main Content */}
       <main
         className="screen-content animate-fade-in"
         style={{
@@ -96,7 +93,6 @@ export const PronounsPage: React.FC = () => {
             PRONOUNS
           </label>
 
-          {/* Selector trigger */}
           <div
             id="pronouns-input"
             onClick={() => setIsSheetOpen(true)}
@@ -154,7 +150,6 @@ export const PronounsPage: React.FC = () => {
           Select the pronouns that feel right for you.
         </p>
 
-        {/* Action Buttons */}
         <div className="screen-footer">
           <Button
             onClick={handleNext}
@@ -176,7 +171,6 @@ export const PronounsPage: React.FC = () => {
         </div>
       </main>
 
-      {/* Pronoun Selector Bottom Sheet */}
       <PronounSelectorSheet
         isOpen={isSheetOpen}
         onClose={() => setIsSheetOpen(false)}
