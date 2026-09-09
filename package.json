@@ -1,7 +1,8 @@
 {
-  "name": "neonvibe-social-signup",
+  "name": "neonvibe",
   "private": true,
   "version": "1.0.0",
+  "description": "A responsive frontend recreation of the Extroverts social event and nightlife onboarding experience.",
   "type": "module",
   "scripts": {
     "dev": "vite",
