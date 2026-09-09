@@ -2,20 +2,65 @@
 
 NeonVibe is a responsive frontend recreation of a modern social and event signup experience, developed as part of a frontend engineering assessment. It reproduces the authentic onboarding wizard and nightlife community interactions of the Extroverts platform with pixel-level attention to detail, robust client-side state management, and strict data validation.
 
+**Live Demo**: [https://neon-vibe-seven.vercel.app/](https://neon-vibe-seven.vercel.app/)
+
 ---
 
 ## User Flow & Screenshots
 
-| Step | Preview | Description |
-| :---: | :--- | :--- |
-| **1** | ![Intro Splash](./Screenshots/image1.png) | **Intro Splash Screen**<br>Ambient glow hero entrance highlighting curated nightlife, before-hours hangouts, and VIP passes. |
-| **2** | ![Events Discovery Feed](./Screenshots/image2.png) | **Events Discovery Feed (Desktop Website View)**<br>Full-width party feed with category filters (*All Parties, Tonight, VIP Lounges, Rooftops*), host cards, and RSVP buttons. |
-| **3** | ![Email Onboarding](./Screenshots/image3.png) | **Email Verification**<br>Accessible email field with RFC 5322 validation, error feedback, and newsletter opt-in toggle. |
-| **4** | ![OTP Verification](./Screenshots/image4.png) | **6-Digit OTP Verification**<br>6-cell input with auto-advance, backspace jumping, paste support, 30s resend cooldown, and a one-click demo code helper. |
-| **5** | ![Date of Birth & Age](./Screenshots/image5.png) | **Age & Birthday Verification**<br>Calendar date selector with dynamic age calculation and strict 18+ validation. |
-| **6** | ![Pronoun Selection](./Screenshots/image6.png) | **Pronoun Selection**<br>Modal selector with 14 pronoun options and a real-time maximum-3 limit guard. |
-| **7** | ![Success Screen](./Screenshots/image7.png) | **Celebratory Success Screen ("YOU'RE IN")**<br>Instant feedback card showing verified credentials and direct access to party features. |
-| **8** | ![Mobile Simulator](./Screenshots/image8.png) | **Mobile Viewport Simulator**<br>Realistic mobile frame with responsive layout, status bar, and 4-tab bottom navigation (*Home, Chat, Create, Profile*). |
+### 1. Intro Splash Screen
+Ambient glow hero entrance highlighting curated nightlife, before-hours hangouts, and VIP passes.
+
+![Intro Splash Screen](./Screenshots/image1.png)
+
+---
+
+### 2. Events Discovery Feed (Desktop Website View)
+Full-width party feed with category filters (*All Parties, Tonight, VIP Lounges, Rooftops*), host cards, and RSVP buttons.
+
+![Events Discovery Feed](./Screenshots/image2.png)
+
+---
+
+### 3. Email Verification
+Accessible email field with RFC 5322 validation, error feedback, and newsletter opt-in toggle.
+
+![Email Verification](./Screenshots/image3.png)
+
+---
+
+### 4. 6-Digit OTP Verification
+6-cell input with auto-advance, backspace jumping, paste support, 30s resend cooldown, and a one-click demo code helper.
+
+![OTP Verification](./Screenshots/image4.png)
+
+---
+
+### 5. Age & Birthday Verification
+Calendar date selector with dynamic age calculation and strict 18+ validation.
+
+![Age & Birthday Verification](./Screenshots/image5.png)
+
+---
+
+### 6. Pronoun Selection
+Modal selector with 14 pronoun options and a real-time maximum-3 limit guard.
+
+![Pronoun Selection](./Screenshots/image6.png)
+
+---
+
+### 7. Celebratory Success Screen ("YOU'RE IN")
+Instant feedback card showing verified credentials and direct access to party features.
+
+![Success Screen](./Screenshots/image7.png)
+
+---
+
+### 8. Mobile Viewport Simulator
+Realistic mobile frame with responsive layout, status bar, and 4-tab bottom navigation (*Home, Chat, Create, Profile*).
+
+![Mobile Viewport Simulator](./Screenshots/image8.png)
 
 ---
 
@@ -187,11 +232,3 @@ The visual design is inspired by the reference application screenshots and embra
 - **Color Palette**: Deep Obsidian Black (`#000000`, `#0a0a0c`), Neon Pink (`#ff2a85`), Neon Yellow/Amber (`#ffe600`), and Electric Purple (`#b537f2`).
 - **Surface Elevation**: Glassmorphism translucent backdrops (`rgba(18, 18, 22, 0.85)` with `backdrop-filter: blur()`), subtle neon borders, and glow keyframes.
 - **Typography**: Display typography using Google Fonts for a distinct social club identity.
-
----
-
-## Assessment Notes
-
-This project is a frontend-only implementation designed for client-side evaluation:
-- No external backend or database is required to run the application.
-- OTP dispatch, code verification, and registration persistence are simulated locally using client state and `sessionStorage`.
