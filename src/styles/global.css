@@ -1,0 +1,724 @@
+@import './variables.css';
+@import './animations.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: #050508;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: #050508;
+}
+
+/* Ambient glow background wrapper */
+.desktop-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(255, 42, 133, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(181, 55, 242, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 50% 30%, rgba(0, 210, 255, 0.03) 0%, transparent 60%);
+}
+
+/* ==========================================================================
+   DESKTOP WEBSITE TOP NAVBAR (ONLY in Website Mode)
+   ========================================================================== */
+.desktop-nav-container {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(9, 9, 12, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.desktop-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 16px 32px;
+}
+
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.desktop-nav-link {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-main);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.desktop-nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.desktop-nav-link.active {
+  color: #ffffff;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.desktop-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+  right: 14px;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));
+  border-radius: 2px;
+}
+
+/* Responsive Desktop Navbar */
+@media (max-width: 1024px) {
+  .desktop-navbar {
+    padding: 12px 20px;
+    gap: 16px;
+  }
+  .desktop-nav-links {
+    gap: 12px;
+  }
+  .desktop-nav-link {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+  .desktop-status-pill {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mode-website .app-container {
+    padding: 20px 16px 80px 16px;
+  }
+  .desktop-navbar {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .desktop-nav-links {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .desktop-nav-link {
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  .website-chat-container {
+    height: auto !important;
+    min-height: 560px !important;
+    flex-direction: column !important;
+  }
+  .website-chat-container aside {
+    width: 100% !important;
+    height: 220px !important;
+    border-right: none !important;
+    border-bottom: 1px solid #1f1f28 !important;
+  }
+  .website-chat-container main {
+    height: 380px !important;
+  }
+}
+
+/* ==========================================================================
+   MODE 1: WEBSITE / DESKTOP VIEW (.mode-website)
+   Full-width modern social & nightlife event web application
+   ========================================================================== */
+.mode-website {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-website .app-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 36px 32px 100px 32px;
+  flex: 1;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+/* On Website mode, hide inner mobile headers and bottom navbars */
+.mode-website .screen-header {
+  display: none !important;
+}
+
+.mode-website .mobile-bottom-nav {
+  display: none !important;
+}
+
+/* Ensure child page root divs don't force 100vh black background in website mode */
+.mode-website .app-container > div {
+  min-height: auto !important;
+  background-color: transparent !important;
+  width: 100% !important;
+}
+
+.mode-website .screen-content {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Website events grid: 3 columns on desktop, 2 on laptop/tablet */
+.mode-website .events-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  .mode-website .events-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .mode-website .events-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Website Before-Hours layout */
+.mode-website .website-before-hours-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mode-website .website-hero-section {
+  text-align: center;
+  padding: 40px 20px 30px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mode-website .website-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  width: 100%;
+  max-width: 1040px;
+  margin: 20px auto 48px auto;
+}
+
+.mode-website .website-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto 60px auto;
+}
+
+@media (max-width: 860px) {
+  .mode-website .website-action-grid,
+  .mode-website .website-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Website Wizard Onboarding Card */
+.mode-website .wizard-card-wrapper {
+  max-width: 600px;
+  width: 100%;
+  margin: 30px auto 60px auto;
+  background-color: #0c0c11;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  box-shadow: 
+    0 30px 90px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(255, 42, 133, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.mode-website .wizard-card-wrapper > div {
+  min-height: auto !important;
+  background-color: transparent !important;
+}
+
+.mode-website .wizard-card-wrapper .screen-header {
+  display: flex !important; /* Show clean header inside the onboarding modal */
+  border-bottom: 1px solid #1c1c24;
+  background-color: #111116;
+  padding: 18px 28px;
+}
+
+.mode-website .wizard-card-wrapper .screen-content {
+  padding: 32px 36px 40px 36px !important;
+}
+
+/* Website Profile Layout */
+.mode-website .website-profile-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mode-website .website-profile-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+@media (max-width: 960px) {
+  .mode-website .website-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   MODE 2: MOBILE VIEW (.mode-mobile)
+   Authentic 1:1 mobile phone simulator matching WhatsApp screenshots
+   ========================================================================== */
+.mode-mobile {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 16px 24px 16px;
+  background-color: #050508;
+}
+
+/* NO desktop navbar outside when in mobile view! */
+.mode-mobile .desktop-nav-container {
+  display: none !important;
+}
+
+/* Simulator Switcher Bar above mobile frame on desktop */
+.mobile-simulator-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+.mobile-exit-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #121218;
+  border: 1px solid #2e2e3c;
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-exit-btn:hover {
+  background-color: var(--neon-pink);
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 42, 133, 0.4);
+}
+
+/* Authentic phone simulator container */
+.mode-mobile .app-container {
+  width: 100%;
+  max-width: 412px;
+  height: min(844px, calc(100vh - 65px));
+  max-height: calc(100vh - 65px);
+  min-height: 0;
+  background-color: #000000;
+  border: 2px solid #282832;
+  border-radius: 40px;
+  box-shadow: 
+    0 30px 100px rgba(0, 0, 0, 0.95),
+    0 0 60px rgba(255, 42, 133, 0.15);
+  overflow: hidden !important;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+}
+
+/* Fixed 3px step progress bar */
+.signup-progress-bar {
+  height: 3px !important;
+  max-height: 3px !important;
+  min-height: 3px !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  background-color: #1a1a22 !important;
+  z-index: 30 !important;
+  overflow: hidden !important;
+}
+
+/* Ensure inner pages fill 100% of simulator and flex-scroll */
+.mode-mobile .app-page-wrapper {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.mode-mobile .app-page-wrapper > div {
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.mode-mobile .screen-header {
+  display: flex !important;
+  flex-shrink: 0 !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+  position: relative !important;
+  z-index: 45 !important;
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 0 16px !important;
+}
+
+.mode-mobile .screen-content {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 12px 16px 20px 16px !important;
+}
+
+.mode-mobile .mobile-bottom-nav {
+  display: flex !important;
+  flex-shrink: 0 !important;
+  height: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  position: relative !important;
+  z-index: 45 !important;
+  background-color: #0a0a0c !important;
+  border-top: 1px solid #1a1a20 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+.mode-mobile .events-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+}
+
+/* Hide desktop-only elements inside mobile view */
+.mode-mobile .desktop-feed-header,
+.mode-mobile .desktop-feed-action {
+  display: none !important;
+}
+
+.mode-mobile .wizard-card-wrapper {
+  max-width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: #000000 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   NATIVE MOBILE DEVICES (Screen width <= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .desktop-nav-container,
+  .mobile-simulator-bar {
+    display: none !important;
+  }
+
+  .mode-mobile {
+    padding: 0 !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    overflow: hidden !important;
+  }
+
+  .mode-mobile .app-container {
+    max-width: 100% !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-color: #000000 !important;
+    overflow: hidden !important;
+  }
+
+  .mode-mobile .app-page-wrapper,
+  .mode-mobile .app-page-wrapper > div {
+    height: 100% !important;
+    max-height: 100% !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .screen-header {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    position: relative !important;
+    z-index: 45 !important;
+  }
+
+  .screen-content {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .mobile-bottom-nav {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    position: relative !important;
+    z-index: 45 !important;
+  }
+
+  .events-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+  }
+
+  .wizard-card-wrapper {
+    max-width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ==========================================================================
+   COMMON ATOMIC COMPONENTS
+   ========================================================================== */
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  min-height: var(--header-height);
+  width: 100%;
+  z-index: 20;
+}
+
+.header-status-badge {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.screen-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.screen-footer {
+  margin-top: auto;
+  padding: 20px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Input */
+.custom-input {
+  width: 100%;
+  height: 54px;
+  background-color: #0b0b0d;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0 16px;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.custom-input.input-error {
+  border-color: var(--error);
+}
+
+.input-error-text {
+  font-size: 0.775rem;
+  color: var(--error);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Buttons */
+.btn-primary {
+  width: 100%;
+  height: 52px;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-main);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.15s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.94;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+.btn-primary:disabled {
+  background-color: #ffffff;
+  color: #a1a1aa;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  width: 100%;
+  height: 52px;
+  background-color: transparent;
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-main);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
